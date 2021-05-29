@@ -148,6 +148,42 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/seekBar2" />
 
+        <hearsilent.discreteslider.DiscreteSlider
+            android:id="@+id/discreteSlider"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="16dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            app:ds_count="21"
+            app:ds_inactiveTrackColor="#3DD81B60"
+            app:ds_maxProgress="10"
+            app:ds_minProgress="5"
+            app:ds_mode="range"
+            app:ds_progressOffset="10"
+            app:ds_thumbColor="@color/purple_500"
+            app:ds_thumbPressedColor="#1FD81B60"
+            app:ds_thumbRadius="6dp"
+            app:ds_tickMarkColor="#3DFFFFFF"
+            app:ds_tickMarkDashLength="1dp"
+            app:ds_tickMarkInactiveColor="#1FD81B60"
+            app:ds_tickMarkPatterns="dot,dash"
+            app:ds_trackColor="@color/purple_500"
+            app:ds_trackWidth="4dp"
+            app:ds_valueLabelMode="showOnPressHold"
+            app:ds_valueLabelTextColor="#FFF"
+            app:ds_valueLabelTextSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent" />
+
         <com.github.anastr.speedviewlib.SpeedView
 
             android:id="@+id/speedView"
@@ -159,10 +195,10 @@
             android:layout_marginLeft="39dp"
             android:layout_marginEnd="72dp"
             android:layout_marginRight="72dp"
-            android:layout_marginBottom="5dp"
+            android:layout_marginBottom="80dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
