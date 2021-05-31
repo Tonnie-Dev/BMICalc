@@ -48,6 +48,12 @@ dependencies {
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
-    compile 'com.github.anastr:speedviewlib:1.1.6'
+    compile 'com.github.anastr:speedviewlib:1.5.5'
     implementation 'com.github.hearsilent:DiscreteSlider:1.2.1'
+     //Logging
+       implementation 'com.jakewharton.timber:timber:4.7.1'
+    // ViewModel
+        implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1"
+        // LiveData
+        implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.3.1"
 }
