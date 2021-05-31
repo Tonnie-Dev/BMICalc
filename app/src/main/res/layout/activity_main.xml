@@ -16,7 +16,7 @@
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="8dp"
             android:text="@string/enter_weight_header"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
@@ -29,47 +29,46 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginLeft="16dp"
-            android:layout_marginTop="100dp"
             android:text="@string/kg_label"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            tools:layout_editor_absoluteY="69dp" />
 
-        <Switch
+        <com.google.android.material.switchmaterial.SwitchMaterial
             android:id="@+id/weight_switch"
-            android:layout_width="116dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginTop="100dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginRight="16dp"
+            android:layout_marginStart="176dp"
+            android:layout_marginLeft="176dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="182dp"
+            android:layout_marginRight="182dp"
+            android:layout_marginBottom="93dp"
             android:textOff="@string/pound_label"
             android:textOn="@string/kg_label"
-            app:layout_constraintBottom_toBottomOf="@+id/textView2"
-            app:layout_constraintEnd_toStartOf="@+id/textView3"
-            app:layout_constraintStart_toEndOf="@+id/textView2"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintBottom_toTopOf="@+id/textView4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView" />
 
         <TextView
             android:id="@+id/textView3"
             android:layout_width="116dp"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="16dp"
-            android:layout_marginRight="16dp"
+            android:layout_marginEnd="48dp"
+            android:layout_marginRight="48dp"
             android:text="@string/pound_label"
-            app:layout_constraintBottom_toBottomOf="@+id/weight_switch"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:layout_editor_absoluteY="69dp" />
 
         <TextView
             android:id="@+id/textView4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
             android:text="@string/enter_height_header"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_bias="0.486"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/seekBar" />
+            tools:layout_editor_absoluteY="162dp" />
 
         <TextView
             android:id="@+id/textView5"
@@ -77,12 +76,12 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginLeft="16dp"
-            android:layout_marginTop="250dp"
-            android:text="TextView"
+            android:layout_marginTop="216dp"
+            android:text="@string/cm_label"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <Switch
+        <com.google.android.material.switchmaterial.SwitchMaterial
             android:id="@+id/switch2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -91,9 +90,10 @@
             android:layout_marginEnd="44dp"
             android:layout_marginRight="44dp"
             android:text="Switch"
-            app:layout_constraintBottom_toBottomOf="@+id/textView5"
             app:layout_constraintEnd_toStartOf="@+id/textView6"
-            app:layout_constraintStart_toEndOf="@+id/textView5" />
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/textView5"
+            tools:layout_editor_absoluteY="203dp" />
 
         <TextView
             android:id="@+id/textView6"
@@ -101,101 +101,57 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="61dp"
             android:layout_marginRight="61dp"
-            android:text="TextView"
+            android:text="@string/feet_label"
             app:layout_constraintBottom_toBottomOf="@+id/switch2"
             app:layout_constraintEnd_toEndOf="parent" />
 
-        <SeekBar
-            android:id="@+id/seekBar"
-            style="@style/Widget.AppCompat.SeekBar.Discrete"
+
+        <com.google.android.material.slider.Slider
+            android:id="@+id/continuous_slider"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="36dp"
-            android:max="10"
-            android:progress="3"
+            android:stepSize="1"
+            android:valueFrom="0"
+            android:valueTo="100"
+            app:labelBehavior="floating"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="162dp" />
+
+        <com.google.android.material.slider.Slider
+            android:id="@+id/height_slider"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:stepSize="1"
+            android:valueFrom="0"
+            android:valueTo="100"
             app:labelBehavior="withinBounds"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/weight_switch" />
-
-        <SeekBar
-            android:id="@+id/seekBar2"
-            style="@style/Widget.AppCompat.SeekBar.Discrete"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:max="10"
-            android:progress="3"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/switch2" />
-
-
-        <SeekBar
-            android:id="@+id/seekBar3"
-            style="@style/Widget.AppCompat.SeekBar.Discrete"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginTop="32dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginRight="16dp"
-            android:max="10"
-            android:progress="3"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/seekBar2" />
-
-        <hearsilent.discreteslider.DiscreteSlider
-            android:id="@+id/discreteSlider"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginRight="16dp"
-            android:layout_marginBottom="16dp"
-            android:clickable="true"
-            android:focusable="true"
-            android:paddingLeft="16dp"
-            android:paddingRight="16dp"
-            app:ds_count="21"
-            app:ds_inactiveTrackColor="#3DD81B60"
-            app:ds_maxProgress="10"
-            app:ds_minProgress="5"
-            app:ds_mode="range"
-            app:ds_progressOffset="10"
-            app:ds_thumbColor="@color/purple_500"
-            app:ds_thumbPressedColor="#1FD81B60"
-            app:ds_thumbRadius="6dp"
-            app:ds_tickMarkColor="#3DFFFFFF"
-            app:ds_tickMarkDashLength="1dp"
-            app:ds_tickMarkInactiveColor="#1FD81B60"
-            app:ds_tickMarkPatterns="dot,dash"
-            app:ds_trackColor="@color/purple_500"
-            app:ds_trackWidth="4dp"
-            app:ds_valueLabelMode="showOnPressHold"
-            app:ds_valueLabelTextColor="#FFF"
-            app:ds_valueLabelTextSize="16sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="235dp" />
+
+        <com.google.android.material.slider.Slider
+            android:id="@+id/inch_slider"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:stepSize="1"
+            android:valueFrom="0"
+            android:valueTo="100"
+            app:labelBehavior="withinBounds"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="315dp" />
 
         <com.github.anastr.speedviewlib.SpeedView
-
             android:id="@+id/speedView"
-
-            android:layout_width="300dp"
-
-            android:layout_height="wrap_content"
+            android:layout_width="214dp"
+            android:layout_height="219dp"
             android:layout_marginStart="39dp"
             android:layout_marginLeft="39dp"
             android:layout_marginEnd="72dp"
             android:layout_marginRight="72dp"
-            android:layout_marginBottom="80dp"
+            android:layout_marginBottom="16dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
