@@ -6,6 +6,7 @@
     <string name="pound_label" >POUND</string>
     <string name="cm_label" >CM</string>
     <string name="feet_label" >Feets</string>
+    <string name="button_calculate_text" >Calcuate BMI</string>
 
 
 </resources>
