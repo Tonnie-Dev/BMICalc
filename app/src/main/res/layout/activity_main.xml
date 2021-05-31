@@ -5,6 +5,9 @@
 
     <data>
 
+        <variable name="viewModel"
+            type="com.androidshowtime.MyViewModelClass"
+            />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
