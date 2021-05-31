@@ -1,4 +1,6 @@
 package com.androidshowtime
 
-class MyViewModelClass {
+import androidx.lifecycle.ViewModel
+
+class MyViewModelClass: ViewModel() {
 }
