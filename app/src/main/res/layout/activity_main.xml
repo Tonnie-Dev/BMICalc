@@ -100,14 +100,14 @@
             app:layout_constraintEnd_toEndOf="parent" />
 
         <com.google.android.material.slider.Slider
-            android:id="@+id/continuous_slider"
+            android:id="@+id/height_slider"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
             android:stepSize="1"
-            android:value="@={viewModel.weightSliderValue}"
+            android:value="@={viewModel.heightSliderValue}"
             android:valueFrom="0"
             android:valueTo="100"
             app:labelBehavior="floating"
@@ -117,26 +117,28 @@
             app:layout_constraintTop_toBottomOf="@+id/switch2" />
 
         <com.google.android.material.slider.Slider
-            android:id="@+id/height_slider"
+            android:id="@+id/inch_slider"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="8dp"
             android:layout_marginEnd="16dp"
             android:stepSize="1"
+            android:value="@={viewModel.inchSliderValue}"
             android:valueFrom="0"
             android:valueTo="100"
             app:labelBehavior="floating"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/continuous_slider" />
+            app:layout_constraintTop_toBottomOf="@+id/height_slider" />
 
         <com.google.android.material.slider.Slider
-            android:id="@+id/inch_slider"
+            android:id="@+id/weight_slider"
             android:layout_width="0dp"
+            android:value="@={viewModel.weightSliderValue}"
             android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
             android:layout_marginTop="12dp"
+            android:layout_marginEnd="16dp"
             android:stepSize="1"
             android:valueFrom="0"
             android:valueTo="100"
@@ -151,7 +153,7 @@
             android:layout_height="221dp"
             android:layout_marginStart="39dp"
             android:layout_marginEnd="72dp"
-            android:layout_marginBottom="48dp"
+            android:layout_marginBottom="24dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.609"
@@ -163,7 +165,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
-            android:layout_marginBottom="24dp"
+            android:layout_marginBottom="16dp"
             android:text="@string/button_calculate_text"
             app:layout_constraintBottom_toTopOf="@+id/speedView"
             app:layout_constraintEnd_toEndOf="parent"

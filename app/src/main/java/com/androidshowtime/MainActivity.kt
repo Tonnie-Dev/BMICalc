@@ -32,7 +32,16 @@ class MainActivity : AppCompatActivity() {
 
         viewModel.weightSliderValue.observe(this){
 
-            count -> Timber.i("The count is now $count")
+            count -> Timber.i("The Weight count is now $count")
+        }
+        viewModel.heightSliderValue.observe(this){
+
+                count -> Timber.i("The Heigh count is now $count")
+        }
+
+        viewModel.inchSliderValue.observe(this){
+
+                count -> Timber.i("The Inch count is now $count")
         }
 
 
