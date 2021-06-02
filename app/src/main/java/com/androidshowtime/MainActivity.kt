@@ -45,7 +45,13 @@ class MainActivity : AppCompatActivity() {
         }
 
 
-        viewModel.isWeightChecked.observe(this){
+        viewModel.isPoundsChecked.observe(this){
+
+            Timber.i("The switch is $it")
+
+        }
+
+        viewModel.isFeetChecked.observe(this){
 
             Timber.i("The switch is $it")
 
