@@ -34,9 +34,9 @@ class MainActivity : AppCompatActivity() {
 
             count -> Timber.i("The Weight count is now $count")
 
-            
+            binding.heightTextView.text = count.toString()
 
-            viewModel.getWeight(count)
+
         }
         viewModel.heightSliderValue.observe(this){
 
@@ -60,5 +60,7 @@ class MainActivity : AppCompatActivity() {
             Timber.i("The switch is $it")
 
         }
+
+        binding.
     }
 }
