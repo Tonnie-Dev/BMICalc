@@ -45,5 +45,10 @@ class MainActivity : AppCompatActivity() {
         }
 
 
+        viewModel.isWeightChecked.observe(this){
+
+            Timber.i("The switch is $it")
+
+        }
     }
 }
