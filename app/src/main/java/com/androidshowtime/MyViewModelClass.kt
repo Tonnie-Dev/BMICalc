@@ -15,6 +15,9 @@ class MyViewModelClass : ViewModel() {
     val isPoundsChecked = MutableLiveData<Boolean>()
     val isFeetChecked = MutableLiveData<Boolean>()
 
+    //Height
+   // private val _height
+
 
     fun getHeight(): Double {
 
@@ -26,26 +29,25 @@ class MyViewModelClass : ViewModel() {
             }
             else -> {
 
-                (heightSliderValue.value?.div(100))?
+                (heightSliderValue.value?.div(100))?.toDouble()!!
 
-                !!
+
             }
         }
     }
 
 
-    fun getWeight(): Double {
+    fun getWeight(count:Float): Double {
 
       return when(isPoundsChecked.value){
 
-
           true -> {
 
-              weightSliderValue.value?.div(2.20462)!!
+              count.div(2.20462)
           }
           else -> {
 
-              weightSliderValue.value?.toDouble()!!
+              count.toDouble()
           }
       }
 
