@@ -5,6 +5,7 @@ import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.databinding.DataBindingUtil
 import com.androidshowtime.databinding.ActivityMainBinding
+import timber.log.Timber
 
 class MainActivity : AppCompatActivity() {
  
@@ -14,7 +15,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         //setContentView(R.layout.activity_main)
-
+        Timber.plant(Timber.DebugTree())
         binding = DataBindingUtil.setContentView(this,R.layout.activity_main)
 
         //link viewModels together
@@ -22,6 +23,17 @@ class MainActivity : AppCompatActivity() {
 
         //make binding observe LiveData
         binding.lifecycleOwner = this
+
+        //Initialize Timber
+
+
+        Timber.i("inside oncreate")
+        //observer weight slider
+
+        viewModel.weightSliderValue.observe(this){
+
+            count -> Timber.i("The count is now $count")
+        }
 
 
     }
