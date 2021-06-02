@@ -132,6 +132,7 @@
             android:stepSize="1"
             android:value="@={viewModel.inchSliderValue}"
             android:valueFrom="0"
+            app:sliderVisibility="@{viewModel.isFeetChecked()}"
             android:valueTo="100"
             app:labelBehavior="floating"
             app:layout_constraintEnd_toEndOf="parent"
@@ -199,7 +200,7 @@
             android:layout_marginStart="22dp"
             android:layout_marginEnd="27dp"
             android:layout_marginBottom="54dp"
-            android:text="TextView"
+            android:text="@{viewModel.bmi.toString()}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/speedView" />
