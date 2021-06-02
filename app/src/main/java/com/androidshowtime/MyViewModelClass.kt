@@ -11,10 +11,21 @@ class MyViewModelClass : ViewModel() {
     val heightSliderValue = MutableLiveData<Float>()
     val inchSliderValue = MutableLiveData<Float>()
 
-    //switches
+    //Switches
     val isPoundsChecked = MutableLiveData<Boolean>()
     val isFeetChecked = MutableLiveData<Boolean>()
 
 
+fun getHeight(): Double {
 
+
+    return 0.0
+}
+
+
+    fun getWeight(): Double {
+
+
+        return 0.0
+    }
 }
