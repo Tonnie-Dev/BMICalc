@@ -34,18 +34,22 @@ class MainActivity : AppCompatActivity() {
 
             count -> Timber.i("The Weight count is now $count")
 
-            binding.heightTextView.text = count.toString()
+            binding.weightTextView.text = count.toString()
 
 
         }
         viewModel.heightSliderValue.observe(this){
 
                 count -> Timber.i("The Heigh count is now $count")
+
+            binding.heightTextView.text = count.toString()
+
         }
 
         viewModel.inchSliderValue.observe(this){
 
                 count -> Timber.i("The Inch count is now $count")
+            binding.inchTextView.text = count.toString()
         }
 
 
