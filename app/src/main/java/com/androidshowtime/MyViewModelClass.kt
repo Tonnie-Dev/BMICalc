@@ -22,6 +22,42 @@ class MyViewModelClass : ViewModel() {
         get() = _bmi
 
 
+    //Weight Value
+    private val _weight = MutableLiveData<Double>()
+    val weight: LiveData<Double>
+    get() = _weight
+
+    //Height Value
+    private val _height = MutableLiveData<Double>()
+    val height: LiveData<Double>
+    get() = _height
+
+
+    //weight slider max value
+    private val _weightMax = MutableLiveData<Int>()
+    val weightMax: LiveData<Int>
+    get() = _weightMax
+
+    fun getWeight()  {
+
+         when (isPoundsChecked.value) {
+
+            true -> {
+
+                _weightMax.value = 330
+
+          _weight.value =      weightSliderValue.value?.div(2.20462)!!
+            }
+            else -> {
+                _weightMax.value = 150
+                _weight.value =     weightSliderValue.value?.toDouble()!!
+            }
+        }
+
+
+    }
+
+
     fun getHeight(): Double {
 
         return when (isFeetChecked.value) {
@@ -40,31 +76,16 @@ class MyViewModelClass : ViewModel() {
     }
 
 
-    fun getWeight(): Double {
 
-        return when (isPoundsChecked.value) {
-
-            true -> {
-
-                weightSliderValue.value?.div(2.20462)!!
-            }
-            else -> {
-
-                weightSliderValue.value?.toDouble()!!
-            }
-        }
-
-
-    }
 
     fun computeBMI() {
 
-        val h = getHeight()
-        val w = getWeight()
+        val h = _height.value
+        val w = _weight.value
 
-        val bmi = w / h.pow(2)
+        val bmi = h?.pow(2)?.let { w?.div(it) }
 
-        _bmi.value = bmi
+        _bmi.value = bmi!!
     }
 
 

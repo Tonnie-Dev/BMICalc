@@ -149,7 +149,7 @@
             android:stepSize="1"
             android:value="@={viewModel.weightSliderValue}"
             android:valueFrom="0"
-            android:valueTo="150"
+            android:valueTo="@{viewModel.weightMax}"
             app:labelBehavior="floating"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -193,7 +193,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="27dp"
-            android:layout_marginEnd="16dp"
+            android:layout_marginEnd="8dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView3"
             tools:text="150" />
@@ -215,7 +215,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="121dp"
-            android:layout_marginEnd="16dp"
+            android:layout_marginEnd="8dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/weight_slider"
             tools:text="100" />
@@ -225,7 +225,8 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="36dp"
-            android:layout_marginEnd="16dp"
+            app:textViewVisibility ="@{viewModel.isFeetChecked()}"
+            android:layout_marginEnd="8dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/height_text_view"
             tools:text="10" />

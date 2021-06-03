@@ -1,6 +1,7 @@
 package com.androidshowtime
 
 import android.view.View
+import android.widget.TextView
 import androidx.databinding.BindingAdapter
 import androidx.databinding.InverseBindingAdapter
 import androidx.databinding.InverseBindingListener
@@ -17,16 +18,27 @@ fun setSliderListeners(slider: Slider, attrChange: InverseBindingListener) {
 }
 
 @BindingAdapter("sliderVisibility")
-fun Slider.toggleSliderVisibility(hideSlider:Boolean){
+fun Slider.toggleSliderVisibility(hideSlider: Boolean) {
 
-    if (!hideSlider){
+    visibility = if (!hideSlider) {
 
-      visibility = View.GONE
+        View.GONE
+    } else {
+        View.VISIBLE
+
     }
-    else{
-        visibility = View.VISIBLE
 
+
+}
+
+@BindingAdapter("textViewVisibility")
+
+fun TextView.toggleTextViewVisibility(hideTextView: Boolean) {
+
+    visibility = if (!hideTextView) {
+        View.GONE
+    } else {
+        View.VISIBLE
     }
-
 
 }
