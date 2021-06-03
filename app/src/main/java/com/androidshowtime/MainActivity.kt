@@ -61,6 +61,11 @@ class MainActivity : AppCompatActivity() {
 
         }
 
+        viewModel.bmi.observe(this){
+
+            bmi ->  binding.speedView.speedTo(bmi.toFloat(), 2000)
+        }
+
 
     }
 }

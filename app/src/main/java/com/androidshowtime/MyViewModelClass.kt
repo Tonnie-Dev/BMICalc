@@ -16,7 +16,7 @@ class MyViewModelClass : ViewModel() {
     val isPoundsChecked = MutableLiveData<Boolean>()
     val isFeetChecked = MutableLiveData<Boolean>()
 
-    //Height
+    //BMI
     private val _bmi = MutableLiveData<Double>()
     val bmi: LiveData<Double>
         get() = _bmi
