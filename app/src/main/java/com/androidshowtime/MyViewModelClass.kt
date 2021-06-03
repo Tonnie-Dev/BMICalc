@@ -68,4 +68,18 @@ class MyViewModelClass : ViewModel() {
     }
 
 
+    fun getBMIRange(
+        bmi: Double, underWeight: String, normal: String, overWeight: String,
+        obese: String): String {
+
+
+        return when (bmi) {
+            in 0.0..18.4 -> underWeight
+            in 18.5..25.0 -> normal
+            in 25.1..30.0 -> overWeight
+            else -> obese
+        }
+    }
+
+
 }

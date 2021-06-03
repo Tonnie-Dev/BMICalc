@@ -19,7 +19,7 @@ fun setSliderListeners(slider: Slider, attrChange: InverseBindingListener) {
 @BindingAdapter("sliderVisibility")
 fun Slider.toggleSliderVisibility(hideSlider:Boolean){
 
-    if (hideSlider){
+    if (!hideSlider){
 
       visibility = View.GONE
     }
