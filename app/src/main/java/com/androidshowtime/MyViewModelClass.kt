@@ -23,44 +23,47 @@ class MyViewModelClass : ViewModel() {
 
 
     //Weight Value
-    private val _weight = MutableLiveData<Double>()
+    /*private val _weight = MutableLiveData<Double>()
     val weight: LiveData<Double>
-    get() = _weight
+    get() = _weight*/
+
+    var weight = 0.0
+
 
     //Height Value
-    private val _height = MutableLiveData<Double>()
+    /*private val _height = MutableLiveData<Double>()
     val height: LiveData<Double>
-    get() = _height
-
+    get() = _height*/
+    var height = 0.0
 
     //weight slider max value
     private val _weightMax = MutableLiveData<Int>()
     val weightMax: LiveData<Int>
-    get() = _weightMax
+        get() = _weightMax
 
     //height slider max value
     private val _heightMax = MutableLiveData<Int>()
-    val heightMax:LiveData<Int>
-    get() = _heightMax
+    val heightMax: LiveData<Int>
+        get() = _heightMax
 
-    fun toggleWeightSwitch(checked: Boolean)  {
+    fun toggleWeightSwitch(checked: Boolean) {
 
-         when (checked) {
+        when (checked) {
 
             true -> {
 
                 _weightMax.value = 330
                 resetSlider()
 
+                weight = weightSliderValue.value?.div(2.20462)!!
 
-           //weightSliderValue.value?.div(2.20462)!!
             }
             else -> {
                 _weightMax.value = 150
                 resetSlider()
-               // weightSliderValue.value =150.div(2f)
-                //resetSlider()
-               // _weight.value =     weightSliderValue.value?.toDouble()!!
+
+
+                weight = weightSliderValue.value?.toDouble()!!
             }
         }
 
@@ -70,17 +73,18 @@ class MyViewModelClass : ViewModel() {
 
     fun toggleHeightSwitch(checked: Boolean) {
 
-         when (checked) {
+        when (checked) {
 
             true -> {
 
                 _heightMax.value = 7
+
+                height = getHeight(heightSliderValue.value!!, inchSliderValue.value!!)
                 resetSlider()
-                //(heightSliderValue.value?.times(0.3048))!! + (inchSliderValue.value?.times(0 .0254))!!
             }
             else -> {
                 _heightMax.value = 200
-                //(heightSliderValue.value?.div(100))?.toDouble()!!
+                height = getHeight(heightSliderValue.value!!, 0.0F)
                 resetSlider()
 
             }
@@ -88,22 +92,38 @@ class MyViewModelClass : ViewModel() {
     }
 
 
+    fun getHeight(heightCount: Float, inchCount: Float): Double {
 
+        return when (inchCount > 0F) {
+
+            true -> {
+
+                (heightCount * 0.3048) + (inchCount * 0.0254)
+            }
+            else -> {
+
+                (heightCount / 100).toDouble()
+            }
+        }
+
+
+    }
 
     fun computeBMI() {
 
-        val h = _height.value
-        val w = _weight.value
 
-        val bmi = h?.pow(2)?.let { w?.div(it) }
+        val bmi = weight / height.pow(2)
 
-        _bmi.value = bmi!!
+
+
+        _bmi.value = bmi
     }
 
 
     fun getBMIRange(
         bmi: Double, underWeight: String, normal: String, overWeight: String,
-        obese: String): String {
+        obese: String
+    ): String {
 
 
         return when (bmi) {
