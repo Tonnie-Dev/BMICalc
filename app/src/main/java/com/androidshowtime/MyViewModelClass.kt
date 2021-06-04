@@ -27,14 +27,14 @@ class MyViewModelClass : ViewModel() {
     val weight: LiveData<Double>
     get() = _weight*/
 
-    var weight = 0.0
+    var weight = 82.0
 
 
     //Height Value
     /*private val _height = MutableLiveData<Double>()
     val height: LiveData<Double>
     get() = _height*/
-    var height = 0.0
+    var height = 163.0
 
     //weight slider max value
     private val _weightMax = MutableLiveData<Int>()
@@ -56,17 +56,11 @@ class MyViewModelClass : ViewModel() {
                 weight = getWeight(weightSliderValue.value!!, true)
                 resetSlider()
 
-
-
             }
             else -> {
 
                 _weightMax.value = 150
-                weight = getWeight(weightSliderValue.value!!, false)
                 resetSlider()
-
-
-
             }
         }
 
@@ -81,11 +75,11 @@ class MyViewModelClass : ViewModel() {
             true -> {
 
                 _heightMax.value = 7
-
                 height = getHeight(heightSliderValue.value!!, inchSliderValue.value!!)
                 resetSlider()
             }
             else -> {
+
                 _heightMax.value = 200
                 height = getHeight(heightSliderValue.value!!, 0.0F)
                 resetSlider()
@@ -94,19 +88,21 @@ class MyViewModelClass : ViewModel() {
         }
     }
 
-private fun getWeight(count:Float, isPoundsChecked:Boolean): Double{
+    private fun getWeight(count: Float, isPoundsChecked: Boolean): Double {
 
-    return when(isPoundsChecked){
 
-        true -> {
+        return when (isPoundsChecked) {
 
-            count/2.20462
+            true -> {
+
+                count / 2.20462
+            }
+            else -> count.toDouble()
         }
-        else -> count.toDouble()
+
+
     }
 
-
-}
     private fun getHeight(heightCount: Float, inchCount: Float): Double {
 
         return when (inchCount > 0F) {
@@ -126,11 +122,10 @@ private fun getWeight(count:Float, isPoundsChecked:Boolean): Double{
 
     fun computeBMI() {
 
-
+        weight = getWeight(weightSliderValue.value!!, isPoundsChecked.value!!)
+        height = getHeight(heightSliderValue.value!!, inchSliderValue.value!!)
         val bmi = weight / height.pow(2)
-
-
-
+        
         _bmi.value = bmi
     }
 
