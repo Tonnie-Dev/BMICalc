@@ -37,6 +37,8 @@ class MainActivity : AppCompatActivity() {
             binding.weightTextView.text = count.toString()
 
 
+
+
         }
         viewModel.heightSliderValue.observe(this){
 
@@ -54,7 +56,7 @@ class MainActivity : AppCompatActivity() {
 
 
         viewModel.isPoundsChecked.observe(this){
-
+            viewModel.toggleWeightSwitch()
             Timber.i("The switch is $it")
 
         }
