@@ -53,17 +53,20 @@ class MyViewModelClass : ViewModel() {
             true -> {
 
                 _weightMax.value = 330
+                weight = getWeight(weightSliderValue.value!!, true)
                 resetSlider()
 
-                weight = weightSliderValue.value?.div(2.20462)!!
+
 
             }
             else -> {
+
                 _weightMax.value = 150
+                weight = getWeight(weightSliderValue.value!!, false)
                 resetSlider()
 
 
-                weight = weightSliderValue.value?.toDouble()!!
+
             }
         }
 
@@ -91,8 +94,20 @@ class MyViewModelClass : ViewModel() {
         }
     }
 
+private fun getWeight(count:Float, isPoundsChecked:Boolean): Double{
 
-    fun getHeight(heightCount: Float, inchCount: Float): Double {
+    return when(isPoundsChecked){
+
+        true -> {
+
+            count/2.20462
+        }
+        else -> count.toDouble()
+    }
+
+
+}
+    private fun getHeight(heightCount: Float, inchCount: Float): Double {
 
         return when (inchCount > 0F) {
 
