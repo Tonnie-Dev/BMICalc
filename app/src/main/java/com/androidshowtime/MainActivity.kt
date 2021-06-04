@@ -56,14 +56,18 @@ class MainActivity : AppCompatActivity() {
 
 
         viewModel.isPoundsChecked.observe(this){
-            viewModel.toggleWeightSwitch()
-            Timber.i("The switch is $it")
+
+            checked ->
+            viewModel.toggleWeightSwitch(checked)
+
 
         }
 
         viewModel.isFeetChecked.observe(this){
 
-            Timber.i("The switch is $it")
+            checked ->
+viewModel.toggleHeightSwitch(checked)
+
 
         }
 

@@ -14,7 +14,7 @@ class MyViewModelClass : ViewModel() {
 
     //Switches
     val isPoundsChecked = MutableLiveData<Boolean>(false)
-    val isFeetChecked = MutableLiveData<Boolean>()
+    val isFeetChecked = MutableLiveData<Boolean>(false)
 
     //BMI
     private val _bmi = MutableLiveData<Double>()
@@ -38,9 +38,14 @@ class MyViewModelClass : ViewModel() {
     val weightMax: LiveData<Int>
     get() = _weightMax
 
-    fun toggleWeightSwitch()  {
+    //height slider max value
+    private val _heightMax = MutableLiveData<Int>()
+    val heightMax:LiveData<Int>
+    get() = _heightMax
 
-         when (isPoundsChecked.value) {
+    fun toggleWeightSwitch(checked: Boolean)  {
+
+         when (checked) {
 
             true -> {
 
@@ -63,19 +68,20 @@ class MyViewModelClass : ViewModel() {
     }
 
 
-    fun getHeight() {
+    fun toggleHeightSwitch(checked: Boolean) {
 
-         when (isFeetChecked.value) {
+         when (checked) {
 
             true -> {
 
-                //(heightSliderValue.value?.times(0.3048))!! + (inchSliderValue.value?.times(0
-                                                                                            .0254))!!
+                _heightMax.value = 7
+                resetSlider()
+                //(heightSliderValue.value?.times(0.3048))!! + (inchSliderValue.value?.times(0 .0254))!!
             }
             else -> {
-
+                _heightMax.value = 200
                 //(heightSliderValue.value?.div(100))?.toDouble()!!
-
+                resetSlider()
 
             }
         }
@@ -113,5 +119,6 @@ class MyViewModelClass : ViewModel() {
 
 
         weightSliderValue.value = 0F
+        heightSliderValue.value = 0F
     }
 }
