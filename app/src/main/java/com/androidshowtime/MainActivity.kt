@@ -1,8 +1,10 @@
+
 package com.androidshowtime
 
-import androidx.appcompat.app.AppCompatActivity
+
 import android.os.Bundle
 import androidx.activity.viewModels
+import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.androidshowtime.databinding.ActivityMainBinding
 import timber.log.Timber
@@ -49,7 +51,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         viewModel.inchSliderValue.observe(this) {
-
+  
                 count ->
             Timber.i("The Inch count is now $count")
             binding.inchTextView.text = count.toString()
@@ -75,9 +77,13 @@ class MainActivity : AppCompatActivity() {
         viewModel.bmi.observe(this) {
 
                 bmi ->
-            binding.speedView.speedTo(bmi.toFloat(), 2000)
+            binding.speedView.speedTo(bmi.toFloat(), 2500)
         }
 
 
+
     }
+
+
+
 }

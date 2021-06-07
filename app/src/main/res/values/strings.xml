@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">BMICalc</string>
-    <string name="enter_weight_header" >Choose Weight Unit</string>
-    <string name="enter_height_header" >Choose Height Unit</string>
+    <string name="enter_weight_header" >Switch to Pounds</string>
+    <string name="enter_height_header" >Switch to Feets/Inches</string>
     <string name="kg_label" >KG</string>
     <string name="pound_label" >POUND</string>
     <string name="cm_label" >CM</string>

@@ -125,7 +125,7 @@ class MyViewModelClass : ViewModel() {
         weight = getWeight(weightSliderValue.value!!, isPoundsChecked.value!!)
         height = getHeight(heightSliderValue.value!!, inchSliderValue.value!!)
         val bmi = weight / height.pow(2)
-        
+
         _bmi.value = bmi
     }
 
@@ -150,5 +150,6 @@ class MyViewModelClass : ViewModel() {
 
         weightSliderValue.value = 0F
         heightSliderValue.value = 0F
+        inchSliderValue.value = 0F
     }
 }
