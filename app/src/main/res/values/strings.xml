@@ -4,11 +4,13 @@
     <string name="enter_height_header" >Switch to Feets/Inches</string>
     <string name="kg_label" >KG</string>
     <string name="pound_label" >POUND</string>
+    <string name="pound_abbrev" >LB</string>
     <string name="cm_label" >CM</string>
+    <string name="cm_abbrev" >Cms</string>
+    <string name="feet_inch_abbrev" >FIn</string>
     <string name="feet_inches_label" >Feets/Inches</string>
     <string name="button_calculate_text" >Calcuate BMI</string>
     <string name="text_for_unit_bmi">BMI</string>
-    <string name="lbs_abbrev">LBs</string>
-    <string name="kilos_abbrev">KGs</string>
+
 
 </resources>

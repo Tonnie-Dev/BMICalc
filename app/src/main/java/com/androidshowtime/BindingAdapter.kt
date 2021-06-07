@@ -43,19 +43,36 @@ fun TextView.toggleTextViewVisibility(hideTextView: Boolean) {
 
 }
 
-@BindingAdapter("iconTextController")
-fun TextView.setIcon(checked: Boolean){
+@BindingAdapter("iconWeightTextController")
+fun TextView.setWeightIconText(checked: Boolean){
 
     text = when(checked){
 
         true -> {
 
-            context.getString(R.string.lbs_abbrev)
+            context.getString(R.string.pound_abbrev)
         }
 
         false -> {
 
-            context.getString(R.string.kilos_abbrev)
+            context.getString(R.string.kg_label)
+        }
+    }
+}
+
+@BindingAdapter("iconHeightTextController")
+fun TextView.setHeightIconText(checked: Boolean){
+
+    text = when(checked){
+
+        true -> {
+
+            context.getString(R.string.cm_abbrev)
+        }
+
+        false -> {
+
+            context.getString(R.string.feet_inch_abbrev)
         }
     }
 }

@@ -4,14 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-        <variable name="viewModel"
-            type="com.androidshowtime.MyViewModelClass"
-            />
 
+        <variable
+            name="viewModel"
+            type="com.androidshowtime.MyViewModelClass" />
 
 
     </data>
-
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -144,17 +143,17 @@
             android:layout_marginStart="39dp"
             android:layout_marginEnd="72dp"
             android:layout_marginBottom="24dp"
-            app:sv_maxSpeed="40"
             android:soundEffectsEnabled="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.609"
+            app:layout_constraintStart_toStartOf="parent"
+            app:sv_maxSpeed="40"
             app:sv_sectionStyle="BUTT"
             app:sv_unit="@string/text_for_unit_bmi"
             app:sv_unitUnderSpeedText="true"
             app:sv_withIndicatorLight="true"
-            app:sv_withTremble="false"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.609"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:sv_withTremble="false" />
 
         <Button
             android:id="@+id/calculateBMI"
@@ -163,8 +162,8 @@
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="16dp"
-            android:text="@string/button_calculate_text"
             android:onClick="@{() ->viewModel.computeBMI()}"
+            android:text="@string/button_calculate_text"
             app:layout_constraintBottom_toTopOf="@+id/speedView"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -207,10 +206,10 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="36dp"
-            app:textViewVisibility ="@{viewModel.isFeetChecked()}"
             android:layout_marginEnd="8dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/height_text_view"
+            app:textViewVisibility="@{viewModel.isFeetChecked()}"
             tools:text="10" />
 
         <TextView
@@ -222,22 +221,25 @@
             android:background="@drawable/feet_inches"
             android:padding="@dimen/icon_padding"
             android:textAlignment="center"
-            app:iconTextController="@{viewModel.isPoundsChecked()}"
+            app:iconWeightTextController="@{viewModel.isPoundsChecked()}"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="kgs" />
 
         <TextView
             android:id="@+id/height_text_icon"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            app:iconTextController="@{viewModel.isPoundsChecked()}"
-            android:background="@drawable/feet_inches"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="17dp"
+            android:background="@drawable/feet_inches"
+            android:padding="@dimen/icon_padding"
+            android:textAlignment="center"
+            app:iconHeightTextController="@{viewModel.isFeetChecked()}"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/weight_slider"
-            app:srcCompat="@drawable/cm_icon_foreground" />
+
+            tools:text="F/In" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
