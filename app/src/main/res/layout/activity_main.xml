@@ -217,18 +217,21 @@
             android:id="@+id/weight_text_icon"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            app:iconController="@{viewModel.isPoundsChecked()}"
             android:layout_marginStart="16dp"
             android:layout_marginTop="43dp"
-
+            android:background="@drawable/feet_inches"
+            android:padding="@dimen/icon_padding"
+            android:textAlignment="center"
+            app:iconTextController="@{viewModel.isPoundsChecked()}"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-             />
+            tools:text="kgs" />
 
         <TextView
             android:id="@+id/height_text_icon"
             android:layout_width="40dp"
             android:layout_height="40dp"
+            app:iconTextController="@{viewModel.isPoundsChecked()}"
             android:background="@drawable/feet_inches"
             android:layout_marginStart="16dp"
             android:layout_marginTop="17dp"

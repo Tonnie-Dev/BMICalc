@@ -1,7 +1,6 @@
 package com.androidshowtime
 
 import android.view.View
-import android.widget.ImageView
 import android.widget.TextView
 import androidx.databinding.BindingAdapter
 import androidx.databinding.InverseBindingAdapter
@@ -44,19 +43,19 @@ fun TextView.toggleTextViewVisibility(hideTextView: Boolean) {
 
 }
 
-@BindingAdapter("iconController")
-fun ImageView.setIcon(checked: Boolean){
+@BindingAdapter("iconTextController")
+fun TextView.setIcon(checked: Boolean){
 
-    when(checked){
+    text = when(checked){
 
         true -> {
 
-            this.setImageResource(R.drawable.pounds_drawable)
+            context.getString(R.string.lbs_abbrev)
         }
 
         false -> {
 
-            setImageResource(R.drawable.kg_drawable)
+            context.getString(R.string.kilos_abbrev)
         }
     }
 }

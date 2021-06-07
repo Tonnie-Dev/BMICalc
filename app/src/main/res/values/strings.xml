@@ -8,5 +8,7 @@
     <string name="feet_inches_label" >Feets/Inches</string>
     <string name="button_calculate_text" >Calcuate BMI</string>
     <string name="text_for_unit_bmi">BMI</string>
+    <string name="lbs_abbrev">LBs</string>
+    <string name="kilos_abbrev">KGs</string>
 
 </resources>
