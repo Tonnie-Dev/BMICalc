@@ -214,8 +214,8 @@
 
         <TextView
             android:id="@+id/weight_text_icon"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="@dimen/circle_size"
+            android:layout_height="@dimen/circle_size"
             android:layout_marginStart="16dp"
             android:layout_marginTop="43dp"
             android:background="@drawable/feet_inches"
@@ -228,17 +228,16 @@
 
         <TextView
             android:id="@+id/height_text_icon"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="@dimen/circle_size"
+            android:layout_height="@dimen/circle_size"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="17dp"
+            android:layout_marginTop="43dp"
             android:background="@drawable/feet_inches"
             android:padding="@dimen/icon_padding"
             android:textAlignment="center"
             app:iconHeightTextController="@{viewModel.isFeetChecked()}"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/weight_slider"
-
             tools:text="F/In" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

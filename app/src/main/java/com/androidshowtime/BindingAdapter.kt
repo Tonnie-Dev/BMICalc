@@ -67,12 +67,12 @@ fun TextView.setHeightIconText(checked: Boolean){
 
         true -> {
 
-            context.getString(R.string.cm_abbrev)
+            context.getString(R.string.feet_inch_abbrev)
         }
 
         false -> {
+            context.getString(R.string.cm_abbrev)
 
-            context.getString(R.string.feet_inch_abbrev)
         }
     }
 }
