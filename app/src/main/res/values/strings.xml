@@ -2,14 +2,14 @@
     <string name="app_name">BMICalc</string>
     <string name="enter_weight_header" >Switch to Pounds</string>
     <string name="enter_height_header" >Switch to Feets/Inches</string>
-    <string name="kg_label" >KG</string>
+    <string name="kg_label" >Kgs</string>
     <string name="pound_label" >POUND</string>
-    <string name="pound_abbrev" >LB</string>
+    <string name="pound_abbrev" >Lbs</string>
     <string name="cm_label" >CM</string>
     <string name="cm_abbrev" >Cms</string>
     <string name="feet_inch_abbrev" >FIn</string>
     <string name="feet_inches_label" >Feets/Inches</string>
-    <string name="button_calculate_text" >Calcuate BMI</string>
+    <string name="button_calculate_text" >Calculate BMI</string>
     <string name="text_for_unit_bmi">BMI</string>
 
 

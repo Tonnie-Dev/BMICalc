@@ -54,13 +54,13 @@ class MyViewModelClass : ViewModel() {
 
                 _weightMax.value = 330
                 weight = getWeight(weightSliderValue.value!!, true)
-                resetSlider()
+                resetWeightSlider()
 
             }
             else -> {
 
                 _weightMax.value = 150
-                resetSlider()
+                resetWeightSlider()
             }
         }
 
@@ -76,13 +76,13 @@ class MyViewModelClass : ViewModel() {
 
                 _heightMax.value = 7
                 height = getHeight(heightSliderValue.value!!, inchSliderValue.value!!)
-                resetSlider()
+                resetHeightSliders()
             }
             else -> {
 
                 _heightMax.value = 200
                 height = getHeight(heightSliderValue.value!!, 0.0F)
-                resetSlider()
+                resetHeightSliders()
 
             }
         }
@@ -145,10 +145,16 @@ class MyViewModelClass : ViewModel() {
     }
 
 
-    fun resetSlider() {
+    fun resetWeightSlider() {
 
 
         weightSliderValue.value = 0F
+
+    }
+
+    fun resetHeightSliders() {
+
+
         heightSliderValue.value = 0F
         inchSliderValue.value = 0F
     }
