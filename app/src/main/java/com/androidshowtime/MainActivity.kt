@@ -1,4 +1,3 @@
-
 package com.androidshowtime
 
 
@@ -32,8 +31,26 @@ class MainActivity : AppCompatActivity() {
         //Initialize Timber
 
         Timber.i("inside oncreate")
-        val myNewSection = Section(0f, 0.46f, Color.RED, 40f, Style.ROUND)
+        //val myNewSection = Section(0f, 0.46f, Color.RED, 40f, Style.ROUND)
         //binding.speedView.addSections(myNewSection)
+
+        binding.speedView.clearSections()
+        binding.speedView.addSections(
+            Section(0f, .1f, Color.RED, binding.speedView.speedometerWidth, Style.BUTT),
+            Section(.1f, .4f, Color.GREEN, binding.speedView.speedometerWidth, Style.BUTT),
+            Section(.4f, .75f, Color.YELLOW, binding.speedView.speedometerWidth, Style.BUTT),
+            Section(.75f, .9f, Color.RED, binding.speedView.speedometerWidth, Style.BUTT)
+        )
+        /*binding.speedView.makeSections(4, Color.CYAN, Style.BUTT)
+        // this is very simple way to add sections,
+        // if your speedometer has 0-100 speed rage
+        // that means every section has '20' speed-unit in space.
+
+        // you can change colors to every:
+        binding.speedView.sections[0].color = Color.RED
+        binding.speedView.sections[1].color = Color.GREEN
+        binding.speedView.sections[2].color = Color.YELLOW
+        binding.speedView.sections[3].color = Color.RED*/
 
 
         //Observe weight slider
@@ -59,7 +76,7 @@ class MainActivity : AppCompatActivity() {
 
         //Observe Inch slider
         viewModel.inchSliderValue.observe(this) {
-  
+
                 count ->
             Timber.i("The Inch count is now $count")
             binding.inchTextView.text = count.toString()
@@ -90,9 +107,7 @@ class MainActivity : AppCompatActivity() {
         }
 
 
-
     }
-
 
 
 }

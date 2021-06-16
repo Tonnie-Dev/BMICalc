@@ -52,9 +52,6 @@ dependencies {
     //Speed View
     implementation 'com.github.anastr:speedviewlib:1.5.5'
 
-    //Discrete Slider
-    //implementation 'com.github.hearsilent:DiscreteSlider:1.2.1'
-
     //Logging
     implementation 'com.jakewharton.timber:timber:4.7.1'
     // ViewModel
