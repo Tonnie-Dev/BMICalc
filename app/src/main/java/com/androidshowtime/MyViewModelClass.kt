@@ -135,7 +135,6 @@ class MyViewModelClass : ViewModel() {
         obese: String
     ): String {
 
-
         return when (bmi) {
             in 0.0..18.4 -> underWeight
             in 18.5..25.0 -> normal
@@ -145,8 +144,7 @@ class MyViewModelClass : ViewModel() {
     }
 
 
-    fun resetWeightSlider() {
-
+    private fun resetWeightSlider() {
 
         weightSliderValue.value = 0F
 
