@@ -150,7 +150,7 @@ class MyViewModelClass : ViewModel() {
 
     }
 
-    fun resetHeightSliders() {
+    private fun resetHeightSliders() {
 
 
         heightSliderValue.value = 0F

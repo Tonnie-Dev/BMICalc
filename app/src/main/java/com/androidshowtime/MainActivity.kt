@@ -36,10 +36,10 @@ class MainActivity : AppCompatActivity() {
 
         binding.speedView.clearSections()
         binding.speedView.addSections(
-            Section(0f, .1f, Color.RED, binding.speedView.speedometerWidth, Style.BUTT),
-            Section(.1f, .4f, Color.GREEN, binding.speedView.speedometerWidth, Style.BUTT),
-            Section(.4f, .75f, Color.YELLOW, binding.speedView.speedometerWidth, Style.BUTT),
-            Section(.75f, .9f, Color.RED, binding.speedView.speedometerWidth, Style.BUTT)
+            Section(0f, .460f, Color.LTGRAY, binding.speedView.speedometerWidth, Style.BUTT),
+            Section(.462f, .625f, Color.GREEN, binding.speedView.speedometerWidth, Style.BUTT),
+            Section(.628f, .750f, Color.YELLOW, binding.speedView.speedometerWidth, Style.BUTT),
+            Section(.752f, 1f, Color.RED, binding.speedView.speedometerWidth, Style.BUTT)
         )
         /*binding.speedView.makeSections(4, Color.CYAN, Style.BUTT)
         // this is very simple way to add sections,
