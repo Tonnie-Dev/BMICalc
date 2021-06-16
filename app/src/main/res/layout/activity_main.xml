@@ -148,7 +148,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.609"
             app:layout_constraintStart_toStartOf="parent"
-            app:sv_maxSpeed="40"
+            app:sv_maxSpeed="50"
             app:sv_sectionStyle="BUTT"
             app:sv_unit="@string/text_for_unit_bmi"
             app:sv_unitUnderSpeedText="true"

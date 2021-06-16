@@ -9,6 +9,7 @@ import androidx.databinding.DataBindingUtil
 import com.androidshowtime.databinding.ActivityMainBinding
 import com.github.anastr.speedviewlib.components.Section
 import com.github.anastr.speedviewlib.components.Style
+import com.google.android.material.snackbar.Snackbar
 import timber.log.Timber
 
 class MainActivity : AppCompatActivity() {
@@ -36,10 +37,10 @@ class MainActivity : AppCompatActivity() {
 
         binding.speedView.clearSections()
         binding.speedView.addSections(
-            Section(0f, .460f, Color.LTGRAY, binding.speedView.speedometerWidth, Style.BUTT),
-            Section(.462f, .625f, Color.GREEN, binding.speedView.speedometerWidth, Style.BUTT),
-            Section(.628f, .750f, Color.YELLOW, binding.speedView.speedometerWidth, Style.BUTT),
-            Section(.752f, 1f, Color.RED, binding.speedView.speedometerWidth, Style.BUTT)
+            Section(0f, .368f, Color.LTGRAY, binding.speedView.speedometerWidth, Style.BUTT),
+            Section(.370f, .500f, Color.GREEN, binding.speedView.speedometerWidth, Style.BUTT),
+            Section(.502f, .600f, Color.YELLOW, binding.speedView.speedometerWidth, Style.BUTT),
+            Section(.602f, 1f, Color.RED, binding.speedView.speedometerWidth, Style.BUTT)
         )
         /*binding.speedView.makeSections(4, Color.CYAN, Style.BUTT)
         // this is very simple way to add sections,
@@ -104,10 +105,16 @@ class MainActivity : AppCompatActivity() {
 
                 bmi ->
             binding.speedView.speedTo(bmi.toFloat(), 2500)
+           val range = viewModel.getBMIRange(bmi, )
+            showSnackbar(range)
         }
 
 
     }
 
 
+    fun showSnackbar(message:String){
+
+        Snackbar.make(binding.root, message, Snackbar.LENGTH_SHORT).show()
+    }
 }

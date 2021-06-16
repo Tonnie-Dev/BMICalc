@@ -10,7 +10,10 @@
     <string name="feet_inch_abbrev" >FIn</string>
     <string name="feet_inches_label" >Feets/Inches</string>
     <string name="button_calculate_text" >Calculate BMI</string>
-    <string name="text_for_unit_bmi">BMI</string>
+    <string name="text_for_unit_bmi">Underweight</string>
+    <string name="text_for_unit_bmi">Normal</string>
+    <string name="text_for_unit_bmi">OverWeight</string>
+    <string name="text_for_unit_bmi">Obese</string>
 
 
 </resources>
