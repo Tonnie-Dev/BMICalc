@@ -80,19 +80,21 @@ fun TextView.setHeightIconText(checked: Boolean) {
 @BindingAdapter("showKiloDot")
 fun TextView.showKiloDot(isShow: Boolean) {
 
-   when (isShow) {
+    visibility = when (isShow) {
 
-       true -> {
+        true -> View.VISIBLE
 
-           visibility = View.VISIBLE
-       }
-       false ->{
+        false -> View.INVISIBLE
 
-           visibility= View.INVISIBLE
-       }
 
-}
+    }
 }
 
 @BindingAdapter("showPoundDot")
-fun TextView.showPoundDot(isShow: Boolean) {}
+fun TextView.showPoundDot(isShow: Boolean) {
+
+    visibility = when (isShow) {
+
+        true -> View.VISIBLE
+
+false -> View.VISIBLE}}
