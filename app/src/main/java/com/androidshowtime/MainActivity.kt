@@ -105,15 +105,19 @@ class MainActivity : AppCompatActivity() {
 
                 bmi ->
             binding.speedView.speedTo(bmi.toFloat(), 2500)
-           val range = viewModel.getBMIRange(bmi, )
+            val range = viewModel.getBMIRange(
+                bmi,
+                getString(R.string.underweight_text),
+                getString(R.string.normal_bmi_text),
+                getString(R.string.overweight_bmi_text),
+                getString(R.string.obese_bmi_text)
+            )
             showSnackbar(range)
         }
 
-
     }
 
-
-    fun showSnackbar(message:String){
+    fun showSnackbar(message: String) {
 
         Snackbar.make(binding.root, message, Snackbar.LENGTH_SHORT).show()
     }
