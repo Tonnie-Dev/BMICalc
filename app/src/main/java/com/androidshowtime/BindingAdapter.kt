@@ -82,9 +82,9 @@ fun TextView.showKiloDot(isShow: Boolean) {
 
     visibility = when (isShow) {
 
-        true -> View.VISIBLE
+        true -> View.INVISIBLE
 
-        false -> View.INVISIBLE
+        false -> View.VISIBLE
 
 
     }
@@ -97,4 +97,4 @@ fun TextView.showPoundDot(isShow: Boolean) {
 
         true -> View.VISIBLE
 
-false -> View.VISIBLE}}
+false -> View.INVISIBLE}}

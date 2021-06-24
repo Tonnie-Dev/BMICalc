@@ -198,8 +198,9 @@
             android:layout_marginTop="43dp"
             android:background="@drawable/feet_inches"
             android:padding="@dimen/icon_padding"
+            android:text="@string/kg_label"
             android:textAlignment="center"
-            app:iconWeightTextController="@{viewModel.isPoundsChecked()}"
+            app:showKiloDot="@{viewModel.isPoundsChecked()}"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="kgs" />
@@ -226,7 +227,8 @@
             android:layout_marginEnd="16dp"
             android:background="@drawable/feet_inches"
             android:padding="9dp"
-            android:text="LBs"
+            app:showPoundDot="@{viewModel.isPoundsChecked()}"
+            android:text="@string/pound_abbrev"
             android:textAlignment="center"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
