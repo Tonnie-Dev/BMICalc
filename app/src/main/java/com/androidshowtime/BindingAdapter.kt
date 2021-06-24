@@ -44,9 +44,9 @@ fun TextView.toggleTextViewVisibility(hideTextView: Boolean) {
 }
 
 @BindingAdapter("iconWeightTextController")
-fun TextView.setWeightIconText(checked: Boolean){
+fun TextView.setWeightIconText(checked: Boolean) {
 
-    text = when(checked){
+    text = when (checked) {
 
         true -> {
 
@@ -61,9 +61,9 @@ fun TextView.setWeightIconText(checked: Boolean){
 }
 
 @BindingAdapter("iconHeightTextController")
-fun TextView.setHeightIconText(checked: Boolean){
+fun TextView.setHeightIconText(checked: Boolean) {
 
-    text = when(checked){
+    text = when (checked) {
 
         true -> {
 
@@ -76,3 +76,23 @@ fun TextView.setHeightIconText(checked: Boolean){
         }
     }
 }
+
+@BindingAdapter("showKiloDot")
+fun TextView.showKiloDot(isShow: Boolean) {
+
+   when (isShow) {
+
+       true -> {
+
+           visibility = View.VISIBLE
+       }
+       false ->{
+
+           visibility= View.INVISIBLE
+       }
+
+}
+}
+
+@BindingAdapter("showPoundDot")
+fun TextView.showPoundDot(isShow: Boolean) {}
