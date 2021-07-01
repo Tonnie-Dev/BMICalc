@@ -27,19 +27,25 @@ class MyViewModelClass : ViewModel() {
     val weight: LiveData<Double>
     get() = _weight*/
 
-    var weight = 82.0
-
+    var weight = 0.00
+    var height = 0.00
 
     //Height Value
     /*private val _height = MutableLiveData<Double>()
     val height: LiveData<Double>
     get() = _height*/
-    var height = 163.0
+
 
     //weight slider max value
     private val _weightMax = MutableLiveData<Int>()
     val weightMax: LiveData<Int>
         get() = _weightMax
+
+
+    //weight Unit
+    private val _weightUnit = MutableLiveData<String>()
+    val weightUnit: LiveData<String>
+        get() = _weightUnit
 
     //height slider max value
     private val _heightMax = MutableLiveData<Int>()
@@ -53,6 +59,7 @@ class MyViewModelClass : ViewModel() {
             true -> {
 
                 _weightMax.value = 330
+                _weightUnit.value = " Lbs"
                 weight = getWeight(weightSliderValue.value!!, true)
                 resetWeightSlider()
 
@@ -60,6 +67,7 @@ class MyViewModelClass : ViewModel() {
             else -> {
 
                 _weightMax.value = 150
+                _weightUnit.value = " Kgs"
                 resetWeightSlider()
             }
         }

@@ -15,6 +15,7 @@ import timber.log.Timber
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
+    private var weightUnit = ""
 
     val viewModel: MyViewModelClass by viewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -42,25 +43,22 @@ class MainActivity : AppCompatActivity() {
             Section(.502f, .600f, Color.YELLOW, binding.speedView.speedometerWidth, Style.BUTT),
             Section(.602f, 1f, Color.RED, binding.speedView.speedometerWidth, Style.BUTT)
         )
-        /*binding.speedView.makeSections(4, Color.CYAN, Style.BUTT)
-        // this is very simple way to add sections,
-        // if your speedometer has 0-100 speed rage
-        // that means every section has '20' speed-unit in space.
 
-        // you can change colors to every:
-        binding.speedView.sections[0].color = Color.RED
-        binding.speedView.sections[1].color = Color.GREEN
-        binding.speedView.sections[2].color = Color.YELLOW
-        binding.speedView.sections[3].color = Color.RED*/
+        viewModel.weightUnit.observe(this){
 
+             unit ->
+
+            weightUnit = unit
+        }
 
         //Observe weight slider
         viewModel.weightSliderValue.observe(this) {
 
                 count ->
-            Timber.i("The Weight count is now $count")
 
-            binding.weightTextView.text = count.toString()
+            val intCount = count.toInt()
+            binding.weightTextView.text =
+                getString(R.string.weight_label, intCount, weightUnit)
 
 
         }
@@ -69,7 +67,7 @@ class MainActivity : AppCompatActivity() {
         viewModel.heightSliderValue.observe(this) {
 
                 count ->
-            Timber.i("The Heigh count is now $count")
+
 
             binding.heightTextView.text = count.toString()
 
@@ -86,9 +84,15 @@ class MainActivity : AppCompatActivity() {
         //Observe weight toggle
         viewModel.isPoundsChecked.observe(this) {
 
-                checked ->
-            viewModel.toggleWeightSwitch(checked)
+                isChecked ->
+            viewModel.toggleWeightSwitch(isChecked)
 
+
+//            weightUnit = when (isChecked) {
+//
+//                true -> " Lbs"
+//                false -> " Kgs"
+//            }
 
         }
 
@@ -117,7 +121,7 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    fun showSnackbar(message: String) {
+    private fun showSnackbar(message: String) {
 
         Snackbar.make(binding.root, message, Snackbar.LENGTH_SHORT).show()
     }

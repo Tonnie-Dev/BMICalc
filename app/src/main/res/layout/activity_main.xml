@@ -24,7 +24,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
 
-            android:layout_marginTop="43dp"
+            android:layout_marginTop="30dp"
             android:checked="@={viewModel.isPoundsChecked()}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.501"
@@ -35,7 +35,7 @@
             android:id="@+id/textView3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="59dp"
+            android:layout_marginTop="45dp"
             android:layout_marginEnd="16dp"
             android:text="@string/pound_label"
             android:textAlignment="textEnd"
@@ -103,7 +103,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="12dp"
+            android:layout_marginTop="40dp"
             android:layout_marginEnd="32dp"
             android:stepSize="1"
             android:value="@={viewModel.weightSliderValue}"
@@ -151,8 +151,8 @@
             android:id="@+id/weight_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="27dp"
-            android:layout_marginEnd="8dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="16dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView3"
             tools:text="150" />
@@ -195,14 +195,14 @@
             android:layout_width="@dimen/circle_size"
             android:layout_height="@dimen/circle_size"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="43dp"
+            android:layout_marginTop="20dp"
             android:background="@drawable/feet_inches"
             android:padding="@dimen/icon_padding"
             android:text="@string/kg_label"
             android:textAlignment="center"
-            app:showKiloDot="@{viewModel.isPoundsChecked()}"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
+            app:showKiloDot="@{viewModel.isPoundsChecked()}"
             tools:text="kgs" />
 
         <TextView
@@ -210,7 +210,7 @@
             android:layout_width="@dimen/circle_size"
             android:layout_height="@dimen/circle_size"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="43dp"
+            android:layout_marginTop="23dp"
             android:background="@drawable/feet_inches"
             android:padding="@dimen/icon_padding"
             android:textAlignment="center"
@@ -223,15 +223,15 @@
             android:id="@+id/pounds_text_icon"
             android:layout_width="@dimen/circle_size"
             android:layout_height="@dimen/circle_size"
-            android:layout_marginTop="43dp"
+            android:layout_marginTop="20dp"
             android:layout_marginEnd="16dp"
             android:background="@drawable/feet_inches"
             android:padding="9dp"
-            app:showPoundDot="@{viewModel.isPoundsChecked()}"
             android:text="@string/pound_abbrev"
             android:textAlignment="center"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:showPoundDot="@{viewModel.isPoundsChecked()}" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
