@@ -16,6 +16,6 @@
     <string name="overweight_bmi_text">OverWeight</string>
     <string name="obese_bmi_text">Obese</string>
     <string name="weight_label">%d %s</string>
-
-
+    <string name="weight_text_label">Weight</string>
+    <string name="height_text_label">Height</string>
 </resources>
