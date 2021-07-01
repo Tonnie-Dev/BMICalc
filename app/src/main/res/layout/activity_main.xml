@@ -20,7 +20,7 @@
 
 
         <TextView
-            android:id="@+id/pounds_text_icon2"
+            android:id="@+id/fts_text_icon"
             android:layout_width="@dimen/circle_size"
             android:layout_height="@dimen/circle_size"
             android:layout_marginTop="232dp"
@@ -233,7 +233,7 @@
             tools:text="kgs" />
 
         <TextView
-            android:id="@+id/height_text_icon"
+            android:id="@+id/cm_text_icon"
             android:layout_width="@dimen/circle_size"
             android:layout_height="@dimen/circle_size"
             android:layout_marginStart="16dp"
