@@ -91,14 +91,17 @@ class MyViewModelClass : ViewModel() {
 
                 _heightMax.value = 7
                 height = getHeight(heightSliderValue.value!!, inchSliderValue.value!!)
+                _heightUnit.value = "ft"
                 resetHeightSliders()
-                _heightUnit.value = "Fts"
+
             }
             else -> {
 
                 _heightMax.value = 200
                 height = getHeight(heightSliderValue.value!!, 0.0F)
+                _heightUnit.value = "cm"
                 resetHeightSliders()
+
 
             }
         }

@@ -16,6 +16,7 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
     private var weightUnit = ""
+    private var heightUnit = ""
 
     val viewModel: MyViewModelClass by viewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -40,11 +41,20 @@ class MainActivity : AppCompatActivity() {
             Section(.602f, 1f, Color.RED, binding.speedView.speedometerWidth, Style.BUTT)
         )
 
+        //observe weight Unit
         viewModel.weightUnit.observe(this){
 
              unit ->
 
             weightUnit = unit
+        }
+
+        //observe height Unit
+        viewModel.heightUnit.observe(this  ){
+
+            unit ->
+
+            heightUnit = unit
         }
 
         //Observe weight slider
@@ -65,7 +75,8 @@ class MainActivity : AppCompatActivity() {
                 count ->
 
             val intCount = count.toInt()
-            binding.heightTextView.text = count.toString()
+            binding.heightTextView.text = getString(R.string.height_label,intCount, heightUnit)
+
 
         }
 
