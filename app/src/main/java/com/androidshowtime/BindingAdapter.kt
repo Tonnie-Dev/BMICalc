@@ -98,3 +98,15 @@ fun TextView.showPoundDot(isShow: Boolean) {
         true -> View.VISIBLE
 
 false -> View.INVISIBLE}}
+
+@BindingAdapter("showCMDot")
+fun TextView.showCMDot(isShow: Boolean) {
+
+    visibility = when (isShow){
+
+        true -> View.VISIBLE
+        false -> View.INVISIBLE
+    }
+
+
+}

@@ -239,6 +239,7 @@
             android:background="@drawable/feet_inches"
             android:padding="@dimen/icon_padding"
             android:textAlignment="center"
+            app:showCMDot="@{viewModel.isFeetChecked()}"
             app:iconHeightTextController="@{viewModel.isFeetChecked()}"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
