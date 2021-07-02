@@ -104,8 +104,8 @@ fun TextView.showCMDot(isShow: Boolean) {
 
     visibility = when (isShow){
 
-        true -> View.VISIBLE
-        false -> View.INVISIBLE
+        true -> View.INVISIBLE
+        false -> View.VISIBLE
     }
 
 

@@ -3,6 +3,7 @@ package com.androidshowtime
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import kotlin.math.ceil
 import kotlin.math.pow
 
 class MyViewModelClass : ViewModel() {
@@ -27,8 +28,8 @@ class MyViewModelClass : ViewModel() {
     val weight: LiveData<Double>
     get() = _weight*/
 
-    var weight = 0.00
-    var height = 0.00
+    var weight = 10.00
+    var height = 10.00
 
     //Height Value
     /*private val _height = MutableLiveData<Double>()
@@ -58,6 +59,10 @@ class MyViewModelClass : ViewModel() {
     private val _heightUnit = MutableLiveData<String>()
     val heightUnit: LiveData<String>
         get() = _heightUnit
+
+    private val _zeroError = MutableLiveData<String>()
+    val zeroError: LiveData<String>
+    get() = _zeroError
 
     fun toggleWeightSwitch(checked: Boolean) {
 
@@ -143,9 +148,21 @@ class MyViewModelClass : ViewModel() {
 
         weight = getWeight(weightSliderValue.value!!, isPoundsChecked.value!!)
         height = getHeight(heightSliderValue.value!!, inchSliderValue.value!!)
-        val bmi = weight / height.pow(2)
 
-        _bmi.value = bmi
+        ceil(height)
+        val isGreaterThanZero = (weight.toInt() >0 && ceil(height).toInt() >0)
+        if (isGreaterThanZero){
+            val bmi = weight / height.pow(2)
+            _bmi.value = bmi
+
+        }
+
+
+        else{
+
+            _zeroError.value = "Weight/Height should be greater than zero"
+        }
+
     }
 
 
@@ -175,4 +192,7 @@ class MyViewModelClass : ViewModel() {
         heightSliderValue.value = 0F
         inchSliderValue.value = 0F
     }
+
+
+
 }

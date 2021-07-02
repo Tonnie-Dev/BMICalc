@@ -40,7 +40,22 @@ class MainActivity : AppCompatActivity() {
             Section(.502f, .600f, Color.YELLOW, binding.speedView.speedometerWidth, Style.BUTT),
             Section(.602f, 1f, Color.RED, binding.speedView.speedometerWidth, Style.BUTT)
         )
+        //Observe weight toggle
+        viewModel.isPoundsChecked.observe(this) {
 
+                isChecked ->
+            viewModel.toggleWeightSwitch(isChecked)
+
+        }
+
+        //Observe height toggle
+        viewModel.isFeetChecked.observe(this) {
+
+                checked ->
+            viewModel.toggleHeightSwitch(checked)
+
+
+        }
         //observe weight Unit
         viewModel.weightUnit.observe(this){
 
@@ -84,32 +99,8 @@ class MainActivity : AppCompatActivity() {
         viewModel.inchSliderValue.observe(this) {
 
                 count ->
-            Timber.i("The Inch count is now $count")
-            binding.inchTextView.text = count.toString()
-        }
-
-        //Observe weight toggle
-        viewModel.isPoundsChecked.observe(this) {
-
-                isChecked ->
-            viewModel.toggleWeightSwitch(isChecked)
-
-
-//            weightUnit = when (isChecked) {
-//
-//                true -> " Lbs"
-//                false -> " Kgs"
-//            }
-
-        }
-
-        //Observe height toggle
-        viewModel.isFeetChecked.observe(this) {
-
-                checked ->
-            viewModel.toggleHeightSwitch(checked)
-
-
+            val inchCount = count.toInt()
+            binding.inchTextView.text = getString(R.string.inch_label, inchCount )
         }
         //Observe BMI value
         viewModel.bmi.observe(this) {
@@ -126,7 +117,15 @@ class MainActivity : AppCompatActivity() {
             showSnackbar(range)
         }
 
+        //Oberve for Zero Error
+
+        viewModel.zeroError.observe(this){
+
+                error -> showSnackbar(error)
+
+        }
     }
+
 
     private fun showSnackbar(message: String) {
 
