@@ -31,7 +31,7 @@
             android:textAlignment="center"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:showPoundDot="@{viewModel.isPoundsChecked()}" />
+            app:showFootDot="@{viewModel.isFeetChecked()}" />
 
         <TextView
             android:id="@+id/textView2"

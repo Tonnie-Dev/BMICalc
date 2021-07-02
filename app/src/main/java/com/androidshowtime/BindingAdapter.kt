@@ -110,3 +110,13 @@ fun TextView.showCMDot(isShow: Boolean) {
 
 
 }
+
+
+@BindingAdapter("showFootDot")
+
+fun TextView.showFootDot(isShow: Boolean){
+
+    visibility = when(isShow){
+
+	true -> View.VISIBLE
+    false -> View.INVISIBLE}}
