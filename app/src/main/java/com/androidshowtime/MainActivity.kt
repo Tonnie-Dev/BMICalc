@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
     val viewModel: MyViewModelClass by viewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        //setContentView(R.layout.activity_main)
+        //Initialize Timber
         Timber.plant(Timber.DebugTree())
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
@@ -30,11 +30,7 @@ class MainActivity : AppCompatActivity() {
         //make binding observe LiveData
         binding.lifecycleOwner = this
 
-        //Initialize Timber
 
-        Timber.i("inside oncreate")
-        //val myNewSection = Section(0f, 0.46f, Color.RED, 40f, Style.ROUND)
-        //binding.speedView.addSections(myNewSection)
 
         binding.speedView.clearSections()
         binding.speedView.addSections(
@@ -68,7 +64,7 @@ class MainActivity : AppCompatActivity() {
 
                 count ->
 
-
+            val intCount = count.toInt()
             binding.heightTextView.text = count.toString()
 
         }
